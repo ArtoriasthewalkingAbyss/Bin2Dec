@@ -1,5 +1,6 @@
 
 const input = document.querySelector("input");
+const sectionResultado = document.querySelector(".resultado");
 
 const button = document.querySelector(".button");
 
@@ -14,9 +15,17 @@ button.addEventListener("click", () => {
 	}
 });
 
+function resultado(arg) {
+	const decimal =	document.createElement("h2");
+	decimal.className = "resultado";
+	decimal.textContent = arg;
+	console.log(decimal);
+
+	sectionResultado.appendChild(decimal);
+}
+
 function convertor(valor) {
 	let decimal = parseInt(valor, 2);
 
-	alert(decimal);
+	resultado(decimal);
 }
-
