@@ -30,7 +30,14 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  gap: 10rem;
+  gap: 7rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 main {
@@ -50,7 +57,7 @@ form {
   align-items: baseline;
 }
 
-.resultado {
+.sec-resultado {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -65,6 +72,7 @@ canvas {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 1rem;
 }
 
 #app {

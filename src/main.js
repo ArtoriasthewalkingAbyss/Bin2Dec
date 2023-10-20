@@ -1,27 +1,33 @@
 
 const input = document.querySelector("input");
-const sectionResultado = document.querySelector(".resultado");
+const sectionResultado = document.querySelector(".sec-resultado");
 
 const button = document.querySelector(".button");
 
 button.addEventListener("click", () => {
 	let valor = input.value;
 	const exRe = /[2-9]/;
-
-	if (!exRe.test(valor)) {
-		convertor(valor);
+	if (valor) {
+		if (!exRe.test(valor)) {
+			convertor(valor);
+		} else {
+			alert("has puesto un numero que no es binario");
+		}
 	} else {
-		alert("has puesto un numero que no es binario");
+		alert("el input esta vació");
 	}
 });
 
 function resultado(arg) {
-	const decimal =	document.createElement("h2");
-	decimal.className = "resultado";
-	decimal.textContent = arg;
-	console.log(decimal);
+	if (document.querySelector(".resultado")) {
+		document.querySelector(".resultado").textContent = arg;
+	} else {
+		const decimal =	document.createElement("h2");
+		decimal.className = "resultado";
+		decimal.textContent = arg;
 
-	sectionResultado.appendChild(decimal);
+		sectionResultado.appendChild(decimal);
+	}
 }
 
 function convertor(valor) {
